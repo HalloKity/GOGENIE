@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sql Mapper -->
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kt.rookie.model.mapper.NosunMapper">
+	<select id="getNosunList" resultType="nosunVO">
+		SELECT station_id, bus_id, commute_id, line, main_place, detail_place, departure_time, office_place, office_time, latitue, longitude
+		FROM nosun
+		WHERE office_place != '' AND commute_id = 0
+	</select>
+
+</mapper>
