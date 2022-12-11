@@ -11,5 +11,5 @@ import com.kt.rookie.model.vo.NosunVO;
 public interface NosunService {
 	List<NosunVO> getNosunList();
 	
-	
+	List<NosunVO> getNosunListByBusId(String busId);
 }

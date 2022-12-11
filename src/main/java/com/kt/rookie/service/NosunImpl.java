@@ -18,4 +18,7 @@ public class NosunImpl implements NosunService{
 	public List<NosunVO> getNosunList() {
 		return nosunMapper.getNosunList();
 	}
+	public List<NosunVO> getNosunListByBusId(String busId) {
+		return nosunMapper.getNosunListByBusId(busId);
+	}
 }

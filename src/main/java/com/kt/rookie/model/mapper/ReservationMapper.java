@@ -8,8 +8,6 @@ import com.kt.rookie.model.vo.NosunVO;
 import com.kt.rookie.model.vo.ReservationVO;
 
 @Mapper
-public interface NosunMapper {
-	ArrayList<NosunVO> getNosunList();
-	
-	ArrayList<NosunVO> getNosunListByBusId(String busId);
+public interface ReservationMapper {
+	ArrayList<ReservationVO> getRemainSeatsByBusId(String busId);
 }
