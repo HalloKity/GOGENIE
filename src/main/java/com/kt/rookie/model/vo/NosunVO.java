@@ -8,7 +8,7 @@ public class NosunVO {
 	private String mainPlace;
 	private String detailPlace;
 	private String departureTime;
-	private Double latitue;
+	private Double latitude;
 	private Double longitude;
 	private String carNum;
 	private String phone;
@@ -19,7 +19,7 @@ public class NosunVO {
 		// TODO Auto-generated constructor stub
 	}
 	public NosunVO(String stationId, String commuteId, String busId, String line, String mainPlace, String detailPlace,
-			String departureTime, Double latitue, Double longitude, String carNum, String phone, String officePlace,
+			String departureTime, Double latitude, Double longitude, String carNum, String phone, String officePlace,
 			String officeTime) {
 		super();
 		this.stationId = stationId;
@@ -29,7 +29,7 @@ public class NosunVO {
 		this.mainPlace = mainPlace;
 		this.detailPlace = detailPlace;
 		this.departureTime = departureTime;
-		this.latitue = latitue;
+		this.latitude = latitude;
 		this.longitude = longitude;
 		this.carNum = carNum;
 		this.phone = phone;
@@ -79,10 +79,10 @@ public class NosunVO {
 		this.departureTime = departureTime;
 	}
 	public Double getLatitue() {
-		return latitue;
+		return latitude;
 	}
 	public void setLatitue(Double latitue) {
-		this.latitue = latitue;
+		this.latitude = latitue;
 	}
 	public Double getLongitude() {
 		return longitude;
@@ -118,7 +118,7 @@ public class NosunVO {
 	public String toString() {
 		return "NosunVO [stationId=" + stationId + ", commuteId=" + commuteId + ", busId=" + busId + ", line=" + line
 				+ ", mainPlace=" + mainPlace + ", detailPlace=" + detailPlace + ", departureTime=" + departureTime
-				+ ", latitue=" + latitue + ", longitude=" + longitude + ", carNum=" + carNum + ", phone=" + phone
+				+ ", latitude=" + latitude + ", longitude=" + longitude + ", carNum=" + carNum + ", phone=" + phone
 				+ ", officePlace=" + officePlace + ", officeTime=" + officeTime + "]";
 	}
 	

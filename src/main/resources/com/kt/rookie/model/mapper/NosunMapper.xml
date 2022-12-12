@@ -5,13 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kt.rookie.model.mapper.NosunMapper">
 	<select id="getNosunList" resultType="nosunVO">
-		SELECT station_id, bus_id, commute_id, line, main_place, detail_place, departure_time, office_place, office_time, latitue, longitude
+		SELECT station_id, bus_id, commute_id, line, main_place, detail_place, departure_time, office_place, office_time, latitude, longitude,car_num,phone
 		FROM nosun
 		WHERE office_place != ''
 	</select>
 	
 	<select id="getNosunListByBusId" resultType="nosunVO">
-		SELECT bus_id, station_id, main_place, detail_place, departure_time, latitue, longitude
+		SELECT bus_id, station_id, main_place, detail_place, departure_time, latitude, longitude
 		FROM nosun
 		WHERE bus_id = #{busId}
 		ORDER BY station_id
