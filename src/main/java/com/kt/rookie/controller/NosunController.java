@@ -24,7 +24,7 @@ public class NosunController {
 	
 	@RequestMapping("/commute-bus")
 	@ResponseBody
-	public List getNosunList(Model model) {
+	public List<NosunVO> getNosunList(Model model) {
 
 		List result = new ArrayList();
 		List<NosunVO> nosunList = nosunService.getNosunList();
@@ -44,8 +44,8 @@ public class NosunController {
 			nosun.put("longtitude", vo.getLongitude().toString());
 			result.add(nosun);
 		}
-		//System.out.println(result);
-		return result;
+		System.out.println(nosunList);
+		return nosunList;
 	}
 	
 	@RequestMapping("/commute-bus/{bus_id}")
