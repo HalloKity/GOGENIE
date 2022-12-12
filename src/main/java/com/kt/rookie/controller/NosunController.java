@@ -50,14 +50,11 @@ public class NosunController {
 	
 	@RequestMapping("/commute-bus/{bus_id}")
 	@ResponseBody
-	public Map<String,List> getNosunListByBusId(@PathVariable("bus_id") String busId) {
-		
-		List<Map<String,String>> content = new ArrayList<Map<String, String>>();
-		
+	public List<NosunVO> getNosunListByBusId(@PathVariable("bus_id") String busId) {
+
 		List<NosunVO> nosunList = nosunService.getNosunListByBusId(busId);
 		for(NosunVO vo :nosunList) {
 			Map<String,String> nosun = new HashMap<>();
-			//System.out.println("노선정보"+vo.getBusId()+vo.getLine()+vo.getMainPlace());
 			nosun.put("bus_id", vo.getBusId());
 			nosun.put("station_id", vo.getStationId());
 			nosun.put("main_place",vo.getMainPlace());
@@ -65,11 +62,8 @@ public class NosunController {
 			nosun.put("departure_time",vo.getDepartureTime());
 			nosun.put("latitude",vo.getLatitue().toString());
 			nosun.put("longtitude", vo.getLongitude().toString());
-			content.add(nosun);
 		}
 		
-		Map<String, List> result = new HashMap<>();
-		result.put("content", content);
-		return result;
+		return nosunList;
 	}
 }
