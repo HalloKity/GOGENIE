@@ -26,11 +26,9 @@ public class NosunController {
 	@ResponseBody
 	public List<NosunVO> getNosunList(Model model) {
 
-		List result = new ArrayList();
 		List<NosunVO> nosunList = nosunService.getNosunList();
 		for(NosunVO vo :nosunList) {
 			Map<String,String> nosun = new HashMap<>();
-			//System.out.println("노선정보"+vo.getBusId()+vo.getLine()+vo.getMainPlace());
 			nosun.put("station_id", vo.getStationId());
 			nosun.put("bus_id", vo.getBusId());
 			nosun.put("commute_id", vo.getCommuteId());
@@ -42,9 +40,7 @@ public class NosunController {
 			nosun.put("office_time", vo.getOfficeTime());
 			nosun.put("latitude",vo.getLatitude().toString());
 			nosun.put("longtitude", vo.getLongitude().toString());
-			result.add(nosun);
 		}
-		System.out.println(nosunList);
 		return nosunList;
 	}
 	
