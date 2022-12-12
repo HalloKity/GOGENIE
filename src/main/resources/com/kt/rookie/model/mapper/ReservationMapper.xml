@@ -23,6 +23,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE bus_id= #{busId} AND DATE_FORMAT(reserve_date, '%m') = Month(Now())
 		GROUP BY reserve_date
 	</select>
+	
+	<delete id="deleteReservation" parameterType="java.lang.String">
+		DELETE FROM reservation
+		WHERE reservation_id = #{reservationId}
+	</delete>
 </mapper>
  
  

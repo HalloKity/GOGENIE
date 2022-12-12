@@ -7,11 +7,13 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kt.rookie.model.vo.ReservationVO;
@@ -66,6 +68,14 @@ public class ReservationController {
 		result.put("content", seats);
 		
 		return result;
+	}
+	
+	@RequestMapping(value="/reservation-bus/cancel/{reservation_id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void cancelReservation(@PathVariable("reservation_id") String reservationId) {	
+		
+		reservationService.deleteReservation(reservationId);
+	
 	}
 
 }

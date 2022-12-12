@@ -11,4 +11,6 @@ public interface ReservationService {
 	List<String> getReservationList();
 
 	List<ReservationVO> getRemainSeat(String busId);
+
+	void deleteReservation(String reservationId);
 }

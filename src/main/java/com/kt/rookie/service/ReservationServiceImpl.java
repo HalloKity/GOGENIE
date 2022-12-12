@@ -29,4 +29,10 @@ public class ReservationServiceImpl implements ReservationService{
 		// TODO Auto-generated method stub
 		return reservationMapper.getRemainSeatsByBusId(busId);
 	}
+
+	@Override
+	public void deleteReservation(String reservationId) {
+		// TODO Auto-generated method stub
+		reservationMapper.deleteReservation(reservationId);
+	}
 }

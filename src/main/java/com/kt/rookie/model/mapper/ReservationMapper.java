@@ -15,4 +15,6 @@ public interface ReservationMapper {
 	void doReservation(ReservationVO resVo);
 
 	ArrayList<String> getReservation();
+
+	void deleteReservation(String reservationId);
 }
