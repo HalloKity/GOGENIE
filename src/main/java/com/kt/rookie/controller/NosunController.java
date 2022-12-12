@@ -40,7 +40,7 @@ public class NosunController {
 			nosun.put("departure_time",vo.getDepartureTime());
 			nosun.put("office_place",vo.getOfficePlace());
 			nosun.put("office_time", vo.getOfficeTime());
-			nosun.put("latitude",vo.getLatitue().toString());
+			nosun.put("latitude",vo.getLatitude().toString());
 			nosun.put("longtitude", vo.getLongitude().toString());
 			result.add(nosun);
 		}
@@ -60,7 +60,7 @@ public class NosunController {
 			nosun.put("main_place",vo.getMainPlace());
 			nosun.put("detail_place", vo.getDetailPlace());
 			nosun.put("departure_time",vo.getDepartureTime());
-			nosun.put("latitude",vo.getLatitue().toString());
+			nosun.put("latitude",vo.getLatitude().toString());
 			nosun.put("longtitude", vo.getLongitude().toString());
 		}
 		

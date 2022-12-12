@@ -8,7 +8,7 @@ public interface ReservationService {
 
 	void doReservation(ReservationVO resVO);
 
-	List<String> getReservationList();
+	List<ReservationVO> getReservationList();
 
 	List<ReservationVO> getRemainSeat(String busId);
 

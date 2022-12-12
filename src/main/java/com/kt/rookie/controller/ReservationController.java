@@ -43,16 +43,16 @@ public class ReservationController {
 	
 	@RequestMapping("/reservation-bus")
 	@ResponseBody
-	public Map<String,List> getReservationList(){
-		List<Map<String,String>> content = new ArrayList<Map<String, String>>();
+	public List<ReservationVO> getReservationList(){
+		//List<Map<String,String>> content = new ArrayList<Map<String, String>>();
 
-		List<String> resList = reservationService.getReservationList();
+		List<ReservationVO> resList = reservationService.getReservationList();
 		System.out.println(resList);
 		
-		Map<String, List> result = new HashMap<>();
-		result.put("content", resList);
+		//Map<String, List> result = new HashMap<>();
+		//result.put("content", resList);
 		
-		return result;
+		return resList;
 	}
 	
 	@RequestMapping("/commute-bus/remain/{bus_id}")

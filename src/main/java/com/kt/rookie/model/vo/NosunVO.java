@@ -36,6 +36,7 @@ public class NosunVO {
 		this.officePlace = officePlace;
 		this.officeTime = officeTime;
 	}
+
 	public String getStationId() {
 		return stationId;
 	}
@@ -78,11 +79,11 @@ public class NosunVO {
 	public void setDepartureTime(String departureTime) {
 		this.departureTime = departureTime;
 	}
-	public Double getLatitue() {
+	public Double getLatitude() {
 		return latitude;
 	}
-	public void setLatitue(Double latitue) {
-		this.latitude = latitue;
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
 	}
 	public Double getLongitude() {
 		return longitude;
@@ -114,7 +115,6 @@ public class NosunVO {
 	public void setOfficeTime(String officeTime) {
 		this.officeTime = officeTime;
 	}
-	@Override
 	public String toString() {
 		return "NosunVO [stationId=" + stationId + ", commuteId=" + commuteId + ", busId=" + busId + ", line=" + line
 				+ ", mainPlace=" + mainPlace + ", detailPlace=" + detailPlace + ", departureTime=" + departureTime

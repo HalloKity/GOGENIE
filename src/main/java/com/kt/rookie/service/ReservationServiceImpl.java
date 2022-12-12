@@ -20,7 +20,7 @@ public class ReservationServiceImpl implements ReservationService{
 	}
 
 	@Override
-	public List<String> getReservationList() {
+	public List<ReservationVO> getReservationList() {
 		// TODO Auto-generated method stub
 		return reservationMapper.getReservation();
 	}
