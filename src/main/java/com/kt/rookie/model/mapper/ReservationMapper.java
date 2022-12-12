@@ -10,4 +10,6 @@ import com.kt.rookie.model.vo.ReservationVO;
 @Mapper
 public interface ReservationMapper {
 	ArrayList<ReservationVO> getRemainSeatsByBusId(String busId);
+	
+	void doReservation(ReservationVO resVo);
 }

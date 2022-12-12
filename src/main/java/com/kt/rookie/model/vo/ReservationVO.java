@@ -56,5 +56,4 @@ public class ReservationVO {
 				+ stationId + ", busId=" + busId + "]";
 	}
 	
-	
 }

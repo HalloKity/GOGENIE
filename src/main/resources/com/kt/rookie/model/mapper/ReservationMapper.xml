@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sql Mapper -->
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kt.rookie.model.mapper.ReservationMapper">
+	<insert id="doReservation" parameterType="reservationVO" useGeneratedKeys="true">
+		INSERT INTO reservation(reserve_date, bus_id, station_id)
+		VALUES(#{reserveDate}, #{busId}, #{stationId})
+	</insert>
+</mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
