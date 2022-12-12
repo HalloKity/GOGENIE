@@ -1,6 +1,7 @@
 package com.kt.rookie.model.mapper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,4 +13,6 @@ public interface ReservationMapper {
 	ArrayList<ReservationVO> getRemainSeatsByBusId(String busId);
 	
 	void doReservation(ReservationVO resVo);
+
+	ArrayList<String> getReservation();
 }

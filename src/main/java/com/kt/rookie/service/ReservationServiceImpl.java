@@ -1,5 +1,7 @@
 package com.kt.rookie.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -15,5 +17,11 @@ public class ReservationServiceImpl implements ReservationService{
 	@Override
 	public void doReservation(ReservationVO resVo) {
 		reservationMapper.doReservation(resVo);
+	}
+
+	@Override
+	public List<String> getReservationList() {
+		// TODO Auto-generated method stub
+		return reservationMapper.getReservation();
 	}
 }

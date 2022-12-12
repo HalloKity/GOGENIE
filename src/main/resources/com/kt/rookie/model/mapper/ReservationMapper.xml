@@ -8,6 +8,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO reservation(reserve_date, bus_id, station_id)
 		VALUES(#{reserveDate}, #{busId}, #{stationId})
 	</insert>
+	
+	<select id="getReservation" resultType="java.util.HashMap" >
+		SELECT a.reservation_id, a.reserve_date, a.station_id, b.main_place, b.detail_place, b.departure_time, b.office_place, b.office_time, b.bus_id, b.car_num as bus_number, b.phone as bus_driver_number
+		FROM reservation a
+		LEFT JOIN nosun b on a.station_id = b.station_id
+	</select>
 </mapper>
  
  
