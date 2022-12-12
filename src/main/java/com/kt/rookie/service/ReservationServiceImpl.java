@@ -24,4 +24,9 @@ public class ReservationServiceImpl implements ReservationService{
 		// TODO Auto-generated method stub
 		return reservationMapper.getReservation();
 	}
+
+	public List<ReservationVO> getRemainSeat(String busId) {
+		// TODO Auto-generated method stub
+		return reservationMapper.getRemainSeatsByBusId(busId);
+	}
 }

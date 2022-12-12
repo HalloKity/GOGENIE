@@ -9,4 +9,6 @@ public interface ReservationService {
 	void doReservation(ReservationVO resVo);
 
 	List<String> getReservationList();
+
+	List<ReservationVO> getRemainSeat(String busId);
 }

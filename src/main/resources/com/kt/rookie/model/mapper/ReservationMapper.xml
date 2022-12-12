@@ -14,6 +14,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM reservation a
 		LEFT JOIN nosun b on a.station_id = b.station_id
 	</select>
+	
+	<select id="getRemainSeatsByBusId" resultType="java.util.HashMap">
+		SELECT reserve_date, count(reserve_date) as count_reserve
+		FROM reservation
+		WHERE bus_id= #{busId} AND DATE_FORMAT(reserve_date, '%m') = Month(Now())
+		GROUP BY reserve_date
+	</select>
 </mapper>
  
  
