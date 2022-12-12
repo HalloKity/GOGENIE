@@ -24,10 +24,9 @@ public class NosunController {
 	
 	@RequestMapping("/commute-bus")
 	@ResponseBody
-	public Map<String,List> getNosunList(Model model) {
-		
-		List<Map<String,String>> content = new ArrayList<Map<String, String>>();
-		
+	public List getNosunList(Model model) {
+
+		List result = new ArrayList();
 		List<NosunVO> nosunList = nosunService.getNosunList();
 		for(NosunVO vo :nosunList) {
 			Map<String,String> nosun = new HashMap<>();
@@ -43,11 +42,9 @@ public class NosunController {
 			nosun.put("office_time", vo.getOfficeTime());
 			nosun.put("latitude",vo.getLatitue().toString());
 			nosun.put("longtitude", vo.getLongitude().toString());
-			content.add(nosun);
+			result.add(nosun);
 		}
-		
-		Map<String, List> result = new HashMap<>();
-		result.put("content", content);
+		//System.out.println(result);
 		return result;
 	}
 	
