@@ -44,29 +44,21 @@ public class ReservationController {
 	@RequestMapping("/reservation-bus")
 	@ResponseBody
 	public List<ReservationVO> getReservationList(){
-		//List<Map<String,String>> content = new ArrayList<Map<String, String>>();
 
 		List<ReservationVO> resList = reservationService.getReservationList();
 		System.out.println(resList);
-		
-		//Map<String, List> result = new HashMap<>();
-		//result.put("content", resList);
 		
 		return resList;
 	}
 	
 	@RequestMapping("/commute-bus/remain/{bus_id}")
 	@ResponseBody
-	public Map<String,List> getRemainSeat(@PathVariable("bus_id") String busId){
-		List<Map<String,String>> content = new ArrayList<Map<String,String>>();
+	public List<ReservationVO> getRemainSeat(@PathVariable("bus_id") String busId){
 		
 		List<ReservationVO> seats = reservationService.getRemainSeat(busId);
 		System.out.println(seats);
 		
-		Map<String,List> result = new HashMap<>();
-		result.put("content", seats);
-		
-		return result;
+		return seats;
 	}
 	
 	@RequestMapping(value="/reservation-bus/cancel/{reservation_id}", method = RequestMethod.DELETE)
