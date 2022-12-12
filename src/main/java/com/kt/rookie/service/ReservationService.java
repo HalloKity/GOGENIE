@@ -6,7 +6,7 @@ import com.kt.rookie.model.vo.ReservationVO;
 
 public interface ReservationService {
 
-	void doReservation(ReservationVO resVo);
+	void doReservation(ReservationVO resVO);
 
 	List<String> getReservationList();
 

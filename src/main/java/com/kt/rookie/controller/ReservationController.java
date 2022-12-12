@@ -24,14 +24,20 @@ public class ReservationController {
 
 	@PostMapping(value="/reservation-bus")
 	@ResponseBody
-	public void doReservation(@RequestBody ReservationVO reservation) {	
+	public void doReservation(@RequestBody List<ReservationVO> reservation) {	
+		
 		System.out.println(reservation);
-		ReservationVO resVO = new ReservationVO();
-		resVO.setReserveDate(reservation.getReserveDate());
-		resVO.setBusId(reservation.getBusId());
-		resVO.setStationId(reservation.getStationId());
-		reservationService.doReservation(resVO);
 
+		for (ReservationVO resList : reservation) {
+			ReservationVO resVO = new ReservationVO();
+			System.out.println(resList);
+			System.out.println(resList.getReserveDate());
+			resVO.setReserveDate(resList.getReserveDate());
+			resVO.setBusId(resList.getBusId());
+			resVO.setStationId(resList.getStationId());
+			reservationService.doReservation(resVO);
+		}
+	
 	}
 	
 	@RequestMapping("/reservation-bus")
