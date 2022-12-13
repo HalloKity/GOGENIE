@@ -25,7 +25,7 @@ public class ReservationController {
 
 	@PostMapping(value="/reservation-bus")
 	@ResponseBody
-	public void doReservation(@RequestBody List<ReservationVO> reservation) {	
+	public int doReservation(@RequestBody List<ReservationVO> reservation) {	
 		
 		System.out.println(reservation);
 
@@ -38,6 +38,7 @@ public class ReservationController {
 			resVO.setStationId(resList.getStationId());
 			reservationService.doReservation(resVO);
 		}
+		return 1;
 	}
 	
 	@RequestMapping("/reservation-bus")
