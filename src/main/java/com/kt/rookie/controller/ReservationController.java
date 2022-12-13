@@ -28,17 +28,22 @@ public class ReservationController {
 	public int doReservation(@RequestBody List<ReservationVO> reservation) {	
 		
 		System.out.println(reservation);
-
-		for (ReservationVO resList : reservation) {
-			ReservationVO resVO = new ReservationVO();
-			System.out.println(resList);
-			System.out.println(resList.getReserveDate());
-			resVO.setReserveDate(resList.getReserveDate());
-			resVO.setBusId(resList.getBusId());
-			resVO.setStationId(resList.getStationId());
-			reservationService.doReservation(resVO);
+		int result = 0 ;
+		try {
+			for (ReservationVO resList : reservation) {
+				ReservationVO resVO = new ReservationVO();
+				System.out.println(resList);
+				System.out.println(resList.getReserveDate());
+				resVO.setReserveDate(resList.getReserveDate());
+				resVO.setBusId(resList.getBusId());
+				resVO.setStationId(resList.getStationId());
+				reservationService.doReservation(resVO);
+				result = 1;
+			}
+		}catch(Exception e) {
+			System.out.println("예약 등록 오류"+e);
 		}
-		return 1;
+		return result;
 	}
 	
 	@RequestMapping("/reservation-bus")
