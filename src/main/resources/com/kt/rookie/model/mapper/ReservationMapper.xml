@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT a.reservation_id, a.reserve_date, a.station_id, b.main_place, b.detail_place, b.departure_time, b.office_place, b.office_time, b.bus_id, b.car_num as bus_number, b.phone as bus_driver_number
 		FROM reservation a
 		LEFT JOIN nosun b on a.station_id = b.station_id 
-		WHERE a.reserve_date >=Now()
+		WHERE a.reserve_date >= DATE_FORMAT(Now(),'%Y-%m-%d') 
 		ORDER BY a.reserve_date
 	</select>
 	
