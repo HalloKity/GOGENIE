@@ -38,7 +38,6 @@ public class ReservationController {
 			resVO.setStationId(resList.getStationId());
 			reservationService.doReservation(resVO);
 		}
-	
 	}
 	
 	@RequestMapping("/reservation-bus")

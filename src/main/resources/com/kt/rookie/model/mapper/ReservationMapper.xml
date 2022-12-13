@@ -16,12 +16,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM reservation a
 		LEFT JOIN nosun b on a.station_id = b.station_id
 	</select>
-	
+	<!-- 
 	<select id="getRemainSeatsByBusId" resultType="java.util.HashMap">
 		SELECT reserve_date, count(reserve_date) as count_reserve
 		FROM reservation
 		WHERE bus_id= #{busId} AND DATE_FORMAT(reserve_date, '%m') = Month(Now())
 		GROUP BY reserve_date
+	</select>
+	 -->
+	<select id="getRemainSeatsByBusId" resultType="java.util.HashMap">
+		SELECT a.reserve_date as date, IFNULL(a.remain_seat-b.count_reserve, a.remain_seat) as remain_seats_count
+		FROM (
+			SELECT temp_date as reserve_date, 44 as remain_seat
+			FROM (
+				SELECT @rnum:=@rnum+1 as rownum, date(adddate('2022-01-01', interval @rnum day)) as temp_date
+				FROM (
+					SELECT @rnum:=-1
+				) r, dummydatenum
+			) k
+		WHERE DATE_FORMAT(temp_date, '%Y-%m') = date_format(now(), '%Y-%m')) a
+		left join (
+			SELECT reserve_date, count(reserve_date) as count_reserve
+			FROM reservation
+			WHERE bus_id=#{busId}
+			GROUP BY reserve_date) b on a.reserve_date = b.reserve_date
 	</select>
 	
 	<delete id="deleteReservation" parameterType="java.lang.String">

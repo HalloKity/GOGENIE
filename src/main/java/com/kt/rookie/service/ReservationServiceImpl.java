@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.kt.rookie.model.mapper.NosunMapper;
 import com.kt.rookie.model.mapper.ReservationMapper;
 import com.kt.rookie.model.vo.ReservationVO;
 
@@ -13,6 +14,7 @@ import com.kt.rookie.model.vo.ReservationVO;
 public class ReservationServiceImpl implements ReservationService{
 	@Resource
 	private ReservationMapper reservationMapper;
+	
 	
 	@Override
 	public void doReservation(ReservationVO resVo) {
